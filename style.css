@@ -1,0 +1,521 @@
+/* Styles globaux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header.main-header {
+    background-color: white;
+    padding: 10px 0;
+    position: relative;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);   
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  /* Logo */
+  .logo img {
+    height: 200px;
+    width: 100px;
+  }
+  
+  /* Menu */
+  .menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu ul li a {
+    text-decoration: none;
+    color: #333;
+    /* font-weight: bold; */
+    transition: color 0.3s ease;
+  }
+  
+  .menu ul li a:hover {
+    color: #ffe227;
+    font-weight: bold;
+  }
+  
+  /* Actions */
+  .auth-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .auth-actions .login {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .auth-actions .signup-btn {
+    text-decoration: none;
+    color: black;
+    background-color: #ffe227;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-actions .signup-btn:hover {
+    background-color: #ffd200;
+  }
+  
+  /* Underline */
+  .header-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+
+/* Conteneur principal */
+.content {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+  }
+  
+  /* Titre principal */
+  .main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .main-title span {
+    color: #ffd200;
+  }
+  
+  /* Paragraphe explicatif */
+  .description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #555;
+  }
+  
+ /* Barre de recherche */
+.search-bar {
+    position: relative;
+    max-width: 600px;
+    margin: 30px auto; /* Centrer */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition fluide */
+    transform: scale(1); /* Taille par défaut */
+  }
+
+  .search-bar:hover {
+    transform: scale(1.05); /* Augmente légèrement la taille */
+  }
+  
+  .search-input {
+    width: 100%; /* Prend toute la largeur */
+    padding: 10px 45px 10px 15px; /* Espace pour le bouton */
+    font-size: 1rem;
+    border: 2px solid #fff;
+    border-radius: 25px; /* Coins arrondis */
+    outline: none;
+    box-sizing: border-box; /* Inclure padding dans la largeur */
+  }
+  
+  /* Bouton de recherche */
+  .search-button {
+    position: absolute;
+    top: 50%; /* Centré verticalement */
+    right: 10px; /* Position à droite */
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ffe227;
+    font-size: 1.2rem;
+  }
+  
+  .search-button:hover {
+    color: #ffe227; /* Changement de couleur au survol */
+  }
+  
+  /* Icône de recherche */
+  .search-button i {
+    pointer-events: none; /* Permet de cliquer sur le bouton sans souci */
+  }
+  
+  
+  /* Header avec background dégradé */
+/* header.main-header {
+    background: linear-gradient(135deg, #ffe227, #000); 
+    padding: 10px 0;
+    position: relative;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+  } */
+  
+  /* Conteneur principal */
+  /* .content {
+    background: linear-gradient(135deg, #fff, #000); 
+    padding: 50px 20px;
+    margin-top: 20px;
+    text-align: center;
+  } */
+  
+  /* Alternative pour jaune et blanc */
+  /* .content.alternate {
+    background: linear-gradient(135deg, #ffe227, #fff); 
+  } */
+  
+
+  /* Section principale */
+.what-we-offer {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    text-align: left;
+  }
+  
+  /* Titre */
+  .offer-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Description */
+  .offer-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  /* Grille */
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  /* Item */
+  .offer-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition fluide */
+    transform: scale(1); /* Taille par défaut */
+  }
+
+  .offer-item:hover {
+    transform: scale(1.05); /* Augmente légèrement la taille */
+  }
+  
+  /* Icône */
+  .offer-icon {
+    font-size: 2rem;
+    color: #ffcc00; /* Couleur des icônes */
+    margin-bottom: 15px;
+  }
+  
+  /* Titre de l'item */
+  .offer-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Description de l'item */
+  .offer-item-description {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Blog Section */
+.blog-list {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: left;
+  }
+  
+  .blog-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .blog-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+  }
+  
+  /* Articles Container */
+  .articles-container {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Featured Article */
+  .featured-article {
+    width: 50%;
+  }
+  
+  .featured-image {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .article-stats {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .save-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .featured-info {
+    margin-top: 20px;
+  }
+  
+  .author-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .author-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .author-details {
+    flex-grow: 1;
+    margin-left: 10px;
+  }
+  
+  .featured-label {
+    background-color: #ffcc00;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .article-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .article-excerpt {
+    color: #555;
+  }
+  
+  /* Other Articles */
+  .other-articles {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .article {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .article-thumb {
+    width: 25%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .article-content {
+    width: 60%;
+  }
+  .article-contentt {
+    width: 90%;
+  }
+  
+  .article-meta {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 5px;
+  }
+  
+  .article-title {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+
+  .article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition fluide */
+    transform: scale(1); /* Taille par défaut */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); Ombre douce par défaut */
+  }
+  
+  .article:hover {
+    transform: scale(1.05); /* Augmente légèrement la taille */
+    /* box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); Accentue l'ombre  */
+  }
+  
+  .article-statss {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between; /* Espace entre la gauche et la droite */
+    align-items: center;           /* Aligne les éléments verticalement */
+  }
+  
+  .stats-left {
+    display: flex;
+    gap: 15px;                     /* Espace entre les icônes de gauche */
+  }
+  
+  .stats-right {
+    margin-left: auto;             /* Pousse l'icône de sauvegarde à droite */
+    cursor: pointer;               /* Montre que c'est cliquable */
+  }
+  
+
+  .featured-article {
+    position: relative; /* Nécessaire pour manipuler les enfants avec effet */
+  }
+  
+  .featured-article .featured-image {
+    transition: filter 0.4s ease; /* Transition fluide pour le filtre */
+  }
+  
+  .featured-article:hover .featured-image {
+    filter: brightness(1.5); /* Augmente la luminosité à 150% */
+  }
+  
+
+  /* Style du lien Show more */
+.show-more {
+    text-align: center;
+    /* text-decoration: underline; */
+    margin-top: 20px; /* Un peu d'espace au-dessus du lien */
+  }
+  
+  .show-more a {
+    /* text-decoration: none; */
+    color: black; /* Couleur du texte du lien */
+    /* font-weight: bold; */
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .show-more a:hover {
+    color: #ffcc00; /* Couleur du lien au survol */
+  }
+
+
+
+
+  /* Style général du footer */
+footer {
+    background-color: #f8f9fa; /* Couleur de fond du pied de page */
+    padding: 40px 0;
+    text-align: center; /* Centrer tout le contenu */
+  }
+  
+  .footer-logo img {
+    max-width: 150px; /* Limiter la taille du logo */
+    margin-bottom: 20px; /* Espace entre le logo et le texte */
+  }
+  
+  /* Texte du footer */
+  .footer-text {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 20px;
+    max-width: 80%; /* Limiter la largeur du texte */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Liens du footer */
+  .footer-links {
+    margin-bottom: 20px; /* Espace avant la ligne */
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .footer-links a:hover {
+    color: #ffd200;
+  }
+  
+  /* Ligne horizontale */
+  .footer-line {
+    border: 0;
+    border-top: 1px solid #ccc; /* Trait gris clair */
+    width: 60%; /* Ne couvre pas toute la largeur */
+    margin: 20px auto;
+  }
+  
+  /* Mentions légales à gauche et à droite */
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .footer-bottom span {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .footer-right a {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .footer-right a:hover {
+    color: #ffd200;
+  }
+  

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles Blog List - Le Mystère de La Vie</title>
+  <link rel="icon" href="images/logo1.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+           
+            /* Section d'introduction du blog */
+            .blog-intro {
+            text-align: center;
+            margin: 20px 0;
+            }
+
+            .blog-intro h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            }
+
+            .blog-intro p {
+            font-size: 1rem;
+            color: #666;
+            }
+
+            .subscribe {
+            margin-top: 10px;
+            }
+
+            .email-input {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 60%;
+            max-width: 400px;
+            }
+
+            .subscribe-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: black;
+            background-color: #ffe227;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+
+            .subscribe-btn:hover {
+            background-color: #ffd200;
+            }
+
+            /* Conteneur principal du blog */
+            .blog-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            }
+
+            /* Articles */
+            .articles {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            }
+
+            .blog-item {
+            display: flex;
+            flex-direction: column;
+            }
+
+            .article-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            }
+
+            .article-content {
+            margin-top: 10px;
+            }
+
+            .author-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #555;
+            }
+
+            .author-photo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            }
+
+            .article-excerpt {
+            margin: 10px 0;
+            font-size: 1rem;
+            color: #333;
+            }
+
+            .article-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+            }
+
+            .article-actions i {
+            margin-right: 5px;
+            }
+
+            .right-icons i {
+            margin-left: 10px;
+            cursor: pointer;
+            }
+
+            /* Sidebar */
+            .sidebar {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            }
+
+            .filters h2,
+            .tags h3,
+            .recommended-topics h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            }
+
+            .filters hr,
+            .tags hr,
+            .recommended-topics hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 10px 0;
+            }
+
+            .search-bar {
+            display: flex;
+            gap: 10px;
+            }
+
+            .search-input {
+            flex: 1;
+            padding: 8px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            }
+
+            .search-btn {
+            padding: 8px 12px;
+            background-color: #ffe227;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+
+            .search-btn:hover {
+            background-color: #ffd200;
+            }
+
+            .tag-list,
+            .topic-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+
+            .tag,
+            .topic {
+                padding: 5px 15px;
+                background: #eee;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                color: #555;
+                font-size: 14px;
+                transition: background 0.3s;
+            }
+
+            .tag:hover,
+            .topic:hover {
+                background: #ddd;
+            }
+
+            .show-more {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: black;
+            font-size: 0.9rem;
+            text-decoration: underline;
+            cursor: pointer;
+            }
+
+            .show-more:hover {
+            text-decoration: none;
+            }
+
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <img src="images/logo1.png" alt="Logo">
+        </div>
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="article.html">Articles</a></li>
+            <li><a href="list.html">Podcasts</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#teams">Teams</a></li>
+          </ul>
+        </nav>
+        <div class="auth-actions">
+          <a href="#login" class="login">Log In</a>
+          <a href="#signup" class="signup-btn">Sign Up</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="blog-intro">
+        <h1>Articles Blog List</h1>
+        <p>En vous inscrivant avec votre adresse mail, vous serez informé de chaque nouvel article ou évènement de "LE Mystère de la Vie".</p>
+        <div class="subscribe">
+          <input type="text" placeholder="Enter your email address" class="email-input">
+          <button class="subscribe-btn">Subscribe</button>
+        </div>
+      </section>
+
+      <section class="blog-container">
+
+        <!-- Article 1 -->
+        <div class="article">
+            <img src="images/article2.jpg" alt="Article 2" class="article-thumb">
+            <div class="article-content">
+                <div class="article-meta">
+                <span class="author-name">Jane Smith</span> - <span class="publish-date">March 11, 2024</span>
+                </div>
+                <h4 class="article-title">Understanding forgiveness</h4>
+                <p class="article-excerpt">
+                La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+                la passion avec le guide exceptionnel...
+                </p>
+                <div class="article-statss">
+                    <div class="stats-left">
+                    <i class="fas fa-thumbs-up"></i> 980
+                    <i class="fas fa-comments"></i> 45
+                    </div>
+                    <div class="stats-right">
+                    <i class="fas fa-bookmark"></i>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <!-- Article 2 -->
+        <!-- <div class="article">
+            <img src="images/article3.jpg" alt="Article 3" class="article-thumb">
+            <div class="article-content">
+                <div class="article-meta">
+                <span class="author-name">Alice Brown</span> - <span class="publish-date">March 10, 2024</span>
+                </div>
+                <h4 class="article-title">The power of empathy</h4>
+                <p class="article-excerpt">
+                La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+                la passion avec le guide exceptionnel...
+                </p>
+                <div class="article-statss">
+                    <div class="stats-left">
+                    <i class="fas fa-thumbs-up"></i> 980
+                    <i class="fas fa-comments"></i> 45
+                    </div>
+                    <div class="stats-right">
+                    <i class="fas fa-bookmark"></i>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+            <!-- Article 3 -->
+            <!-- <div class="article">
+                <img src="images/article4.jpg" alt="Article 4" class="article-thumb">
+                <div class="article-content">
+                    <div class="article-meta">
+                    <span class="author-name">Robert Green</span> - <span class="publish-date">March 9, 2024</span>
+                    </div>
+                    <h4 class="article-title">Practicing gratitude</h4>
+                    <p class="article-excerpt">
+                    La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+                    la passion avec le guide exceptionnel...
+                    </p>
+                    <div class="article-statss">
+                        <div class="stats-left">
+                        <i class="fas fa-thumbs-up"></i> 980
+                        <i class="fas fa-comments"></i> 45
+                        </div>
+                        <div class="stats-right">
+                        <i class="fas fa-bookmark"></i>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div> -->
+
+        <aside class="sidebar" style="width: 33.3%;">
+          <div class="filters">
+            <h2>Filters</h2>
+            <hr>
+            <div class="search-bar">
+              <input type="text" placeholder="Search for an article" class="search-input">
+              <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+
+          <div class="tags">
+            <h3>Magic Tag</h3>
+            <hr>
+            <div class="tag-list">
+              <button class="tag">All</button>
+              <button class="tag">This month</button>
+              <button class="tag">Today</button>
+              <button class="tag">This week</button>
+              <button class="tag">Most viewed</button>
+              <button class="tag">Most saved</button>
+              <button class="tag">Most liked</button>
+            </div>
+          </div>
+
+          <div class="recommended-topics">
+            <h3>Recommended Topics</h3>
+            <hr>
+            <div class="topic-list">
+              <button class="topic">Youth</button>
+              <button class="topic">Programming</button>
+              <button class="topic">Worship Shape</button>
+              <button class="topic">Natural Language Pro...</button>
+              <button class="topic">Simple Program</button>
+              <button class="topic">Worship Shape</button>
+            </div>
+            <a href="#" class="show-more">Show more topics</a>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-logo">
+        <img src="images/logo.png" alt="Logo">
+      </div>
+      <p class="footer-text">
+        La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de
+        la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+        parcourant les quarante stations de son œuvre majeure.
+      </p>
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="article.html">Articles</a>
+        <a href="list.html">Podcasts</a>
+        <a href="#">About</a>
+        <a href="#">Teams</a>
+      </div>
+      <hr class="footer-line">
+      <div class="footer-bottom">
+        <span>@2025 The Mystery of the Life</span>
+        <div class="footer-right">
+          <a href="#">Legal</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

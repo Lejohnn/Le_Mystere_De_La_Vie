@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article - Le Mystère de La Vie</title>
+  <!-- Ajouter l'icône du site (favicon) -->
+  <link rel="icon" href="images/logo1.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Style global */
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+        }
+
+        a {
+        text-decoration: none;
+        color: inherit;
+        }
+
+        a:hover {
+        color: #007bff;
+        }
+
+        .main-container {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        }
+
+        header.main-header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        }
+
+        header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        }
+
+        header .logo img {
+        height: 50px;
+        }
+
+        header .menu ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        }
+
+        header .menu ul li a {
+        color: #fff;
+        font-size: 16px;
+        }
+
+        header .auth-actions a {
+        margin-left: 10px;
+        color: #fff;
+        font-size: 14px;
+        }
+
+        header .signup-btn {
+        background-color: #007bff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        }
+
+        /* Auteur et Date */
+        .authorr-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+        font-size: 14px;
+        color: #666;
+        }
+
+        .authorr-info .authorr-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+        }
+
+        .authorr-info .dot {
+        margin: 0 5px;
+        font-size: 18px;
+        color: #aaa;
+        }
+
+        /* Titre et paragraphe introductif */
+        .article-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin: 10px 0;
+        }
+
+        .intro-paragraph {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 20px;
+        color: #555;
+        }
+
+        /* Section Image de l'article */
+        .article-hero {
+        position: relative;
+        text-align: center;
+        margin: 20px 0;
+        }
+
+        .article-hero .article-img {
+        width: 100%;
+        max-height: 700px;
+        object-fit: cover;
+        border-radius: 10px;
+        }
+
+        .article-icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 20px;
+        }
+
+        .article-icons .icon-like,
+        .article-icons .icon-comment {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        }
+
+        .article-icons .right-icons {
+        display: flex;
+        gap: 15px;
+        }
+
+        .article-icons i {
+        color: #555;
+        }
+
+        /* Article Principal */
+        .main-article {
+        padding: 0 20px;
+        }
+
+        .main-article .article-subtitle {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px 0;
+        }
+
+        .main-article .article-contentt {
+        text-align: justify;
+        line-height: 1.8;
+        margin: 0 auto;
+        max-width: 1000px;
+        color: #444;
+        }
+
+        /* Footer */
+        footer {
+        background-color: #222;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        }
+
+        footer .footer-logo img {
+        height: 60px;
+        margin-bottom: 10px;
+        }
+
+        footer .footer-text {
+        max-width: 600px;
+        margin: 0 auto 20px;
+        font-size: 14px;
+        color: #ddd;
+        }
+
+        footer .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        }
+
+        footer .footer-links a {
+        color: #aaa;
+        font-size: 14px;
+        }
+
+        footer .footer-links a:hover {
+        color: #fff;
+        }
+
+        footer .footer-line {
+        border: 0;
+        border-top: 1px solid #444;
+        margin: 20px 0;
+        }
+
+        footer .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 12px;
+        color: #aaa;
+        padding: 0 20px;
+        }
+
+        footer .footer-right a {
+        margin-left: 10px;
+        color: #aaa;
+        }
+
+        footer .footer-right a:hover {
+        color: #fff;
+        }
+
+
+        /* Section Related Articles */
+          .related-articles {
+            padding: 20px;
+            background-color: #fff;
+          }
+
+          .related-title {
+            text-align: left;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+          }
+
+          .articles-container {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+          }
+
+          .related-article {
+            width: 30%;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition fluide */
+            transform: scale(1); /* Taille par défaut */
+          }
+          .related-article:hover {
+            transform: scale(1.05); /* Augmente légèrement la taille */
+          }
+
+          .article-img-wrapper {
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ajoute une transition fluide */
+            transform: scale(1); /* Taille par défaut */
+          }
+
+          .article-img-wrapper:hover {
+            transform: scale(1.05); /* Augmente légèrement la taille */
+
+          }
+
+          .article-img-wrapper img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+          }
+
+          .article-icons {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-size: 14px;
+          }
+
+          .article-icons .icon-left {
+            display: flex;
+            gap: 10px;
+          }
+
+          .icon-save {
+            color: #fff;
+          }
+
+          .article-info {
+            padding: 10px;
+
+          }
+
+
+
+          .author-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 12px;
+            color: #666;
+          }
+
+          .author-info .author-img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+
+          .author-info .dot {
+            margin: 0 5px;
+            color: #aaa;
+          }
+
+          .featured {
+            color: black;
+            font-size: 12px;
+          }
+
+          .article-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+          }
+
+          .article-snippet {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            text-align: justify;
+          }
+
+
+  </style>
+</head>
+<body>
+    <div class="main-container">
+      <header class="main-header">
+        <div class="container">
+          <div class="logo">
+            <img src="images/logo1.png" alt="Logo">
+          </div>
+          <nav class="menu">
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="article.html">Articles</a></li>
+              <li><a href="list.html">Podcasts</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#teams">Teams</a></li>
+            </ul>
+          </nav>
+          <div class="auth-actions">
+            <a href="#login" class="login">Log In</a>
+            <a href="#signup" class="signup-btn">Sign Up</a>
+          </div>
+        </div>
+      </header>
+  
+      <main class="content">
+        <!-- Section Auteur et Date -->
+        <section class="authorr-info">
+          <img src="images/author.jpg" alt="Auteur" class="authorr-img">
+          <span class="authorr-name">Jean Dupont</span>
+          <span class="dot">•</span>
+          <span class="article-date">25 décembre 2024</span>
+        </section>
+  
+        <!-- Titre de l'article -->
+        <h1 class="article-title">Le Mystère de La Vie</h1>
+  
+        <!-- Paragraphe introductif -->
+        <p class="intro-paragraph">
+          La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+          la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+          parcourant les quarante stations de son œuvre majeure.
+        </p>
+  
+        <!-- Section Image de l'article -->
+        <section class="article-hero">
+          <img src="images/article1.jpg" alt="Article" class="article-img">
+          <div class="article-icons">
+            <span class="icon-like"><i class="fas fa-thumbs-up"></i> 1.5k</span>
+            <span class="icon-comment"><i class="fas fa-comment-alt"></i> 105</span>
+            <div class="right-icons">
+              <span class="icon-save"><i class="fas fa-bookmark"></i></span>
+              <span class="icon-options"><i class="fas fa-ellipsis-h"></i></span>
+            </div>
+          </div>
+        </section>
+  
+        <!-- Article Principal -->
+        <article class="main-article">
+          <h2 class="article-subtitle">Le Mystère de La Vie</h2>
+          <p class="article-contentt">
+            La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+            la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+            parcourant les quarante stations de son œuvre majeure. Cette exploration vous 
+            permettra de découvrir la profondeur et le sens de ce grand mystère de la foi.
+            La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+            la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+            parcourant les quarante stations de son œuvre majeure. Cette exploration vous 
+            permettra de découvrir la profondeur et le sens de ce grand mystère de la foi.
+            La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+            la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+            parcourant les quarante stations de son œuvre majeure. Cette exploration vous 
+            permettra de découvrir la profondeur et le sens de ce grand mystère de la foi.
+            La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+            la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+            parcourant les quarante stations de son œuvre majeure. Cette exploration vous 
+            permettra de découvrir la profondeur et le sens de ce grand mystère de la foi.
+            La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+            la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+            parcourant les quarante stations de son œuvre majeure. Cette exploration vous 
+            permettra de découvrir la profondeur et le sens de ce grand mystère de la foi.
+            La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+            la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+            parcourant les quarante stations de son œuvre majeure. Cette exploration vous 
+            permettra de découvrir la profondeur et le sens de ce grand mystère de la foi.
+            La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+            la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+            parcourant les quarante stations de son œuvre majeure. Cette exploration vous 
+            permettra de découvrir la profondeur et le sens de ce grand mystère de la foi.
+            La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+            la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+            parcourant les quarante stations de son œuvre majeure. Cette exploration vous 
+            permettra de découvrir la profondeur et le sens de ce grand mystère de la foi.
+            <br><br>
+            [Insérez le contenu complet de l'article ici.]
+          </p>
+        </article>
+        <section class="related-articles">
+          <h2 class="related-title">Related Articles</h2>
+          <div class="articles-container">
+            <!-- Article 1 -->
+            <div class="related-article">
+              <div class="article-img-wrapper">
+                <img src="images/article5.jpg" alt="Article Image">
+                <div class="article-icons">
+                  <div class="icon-left">
+                    <i class="fas fa-thumbs-up"></i> 1.5k
+                    <i class="fas fa-comment"></i> 35
+                  </div>
+                  <i class="fas fa-bookmark icon-save"></i>
+                </div>
+              </div>
+              <div class="article-info">
+                <div class="author-info">
+                  <img src="images/author.jpg" alt="Author" class="author-img">
+                  <span>John Doe</span>
+                  <span class="dot">•</span>
+                  <span>25 Dec 2024</span>
+                  <span class="featured">Featured</span>
+                </div>
+                <h3 class="article-title">The Mystery of Life</h3>
+                <p class="article-snippet">
+                  La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de la passion avec le guide exceptionnel...
+                </p>
+              </div>
+            </div>
+        
+            <!-- Article 2 -->
+            <div class="related-article">
+              <div class="article-img-wrapper">
+                <img src="images/article6.jpg" alt="Article Image">
+                <div class="article-icons">
+                  <div class="icon-left">
+                    <i class="fas fa-thumbs-up"></i> 1.5k
+                    <i class="fas fa-comment"></i> 35
+                  </div>
+                  <i class="fas fa-bookmark icon-save"></i>
+                </div>
+              </div>
+              <div class="article-info">
+                <div class="author-info">
+                  <img src="images/author.jpg" alt="Author" class="author-img">
+                  <span>Jane Smith</span>
+                  <span class="dot">•</span>
+                  <span>24 Dec 2024</span>
+                  <span class="featured">Featured</span>
+                </div>
+                <h3 class="article-title">Exploring Faith</h3>
+                <p class="article-snippet">
+                  La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de la passion avec le guide exceptionnel...
+                </p>
+              </div>
+            </div>
+        
+            <!-- Article 3 -->
+            <div class="related-article">
+              <div class="article-img-wrapper">
+                <img src="images/article7.jpg" alt="Article Image">
+                <div class="article-icons">
+                  <div class="icon-left">
+                    <i class="fas fa-thumbs-up"></i> 1.5k
+                    <i class="fas fa-comment"></i> 35
+                  </div>
+                  <i class="fas fa-bookmark icon-save"></i>
+                </div>
+              </div>
+              <div class="article-info">
+                <div class="author-info">
+                  <img src="images/author.jpg" alt="Author" class="author-img">
+                  <span>Emily Davis</span>
+                  <span class="dot">•</span>
+                  <span>23 Dec 2024</span>
+                  <span class="featured">Featured</span>
+                </div>
+                <h3 class="article-title">Understanding the Gospels</h3>
+                <p class="article-snippet">
+                  La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de la passion avec le guide exceptionnel...
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+      </main>
+  
+      <footer>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="Logo">
+        </div>
+        <p class="footer-text">
+          La mort de Jésus est au cœur des évangiles. Vous pouvez relire les écrits de 
+          la passion avec le guide exceptionnel, le grand bibliste Raymond E. Brown, en
+          parcourant les quarante stations de son œuvre majeure.
+        </p>
+        <div class="footer-links">
+          <a href="index.html">Accueil</a>
+          <a href="article.html">Articles</a>
+          <a href="list.html">Podcasts</a>
+          <a href="#">About</a>
+          <a href="#">Teams</a>
+        </div>
+        <hr class="footer-line">
+        <div class="footer-bottom">
+          <span>@2025 The Mystery of the Life</span>
+          <div class="footer-right">
+            <a href="#">Legal</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
